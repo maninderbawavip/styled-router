@@ -18,7 +18,8 @@ const PrimaryButton = styled(Button)`
 const FlexContainer = styled.div`
     display: flex;
     flex-direction: ${props => props.col ? "column": "row"};
-    margin: 50px
+    margin: 50px;
+    align-items: ${props => props.align}
 `
 
 const ThirdButton = styled(Button)`
@@ -39,7 +40,7 @@ export const Home = (props) => {
     return (
         <div>
             <h1>This is my Home Page</h1>
-            <FlexContainer col>
+            <FlexContainer col align="center">
                 <button className="btn"> My New Button </button>
                 {
                     data.map(datapoint => {
@@ -50,10 +51,14 @@ export const Home = (props) => {
                         )
                 })
                 }
+            </FlexContainer>
+
+            <FlexContainer col align="flex-end">
                 
-                <Button type1>Styled Button</Button>
+            <Button type1>Styled Button</Button>
                 <PrimaryButton > primary </PrimaryButton>
                 <ThirdButton>Third</ThirdButton>
             </FlexContainer>
+            
         </div>)
 }
